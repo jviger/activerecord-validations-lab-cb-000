@@ -11,8 +11,8 @@ class Post < ActiveRecord::Base
     if clickbait.any? { |word| title.include?(word) }
       true
     else 
-      
-    
+      errors.add(:title, "must be clickbait")
+    end
  end
   
   
