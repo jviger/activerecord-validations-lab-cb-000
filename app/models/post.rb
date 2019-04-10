@@ -8,9 +8,10 @@ class Post < ActiveRecord::Base
   clickbait = ["Won't Believe", "Secret", "Top [number]", "Guess"]
   
   def clickbaity?
-    if clickbait.none? { |word| title.include?(word) }
-      errors.add(:title, "needs to be clickbaity")
+    if clickbait.any? { |word| title.include?(word) }
+      true
     end
+    
  end
   
   
