@@ -10,7 +10,8 @@ class Post < ActiveRecord::Base
   def clickbaity?
     if clickbait.any? { |word| title.include?(word) }
       true
-    end
+    else 
+      
     
  end
   
