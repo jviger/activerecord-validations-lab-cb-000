@@ -8,7 +8,7 @@ class Post < ActiveRecord::Base
   CLICKBAIT = [/Won't Believe/, /Secret/, /Top [0-9]/,/Guess/]
   
   def clickbaity?
-    if CLICKBAIT.none? { |word| word.match title }
+    if CLICKBAIT.none? { |phrase| phrase.match title }
             errors.add(:title, "must be clickbait")
     end
  end
