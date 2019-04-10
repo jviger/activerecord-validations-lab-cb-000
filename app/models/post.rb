@@ -13,7 +13,6 @@ class Post < ActiveRecord::Base
     end
   else 
     true
-  end
    
   end
   
