@@ -8,10 +8,8 @@ class Post < ActiveRecord::Base
   CLICKBAIT = ["Won't Believe", "Secret", "Top [number]", "Guess"]
   
   def clickbaity?
-    if CLICKBAIT.any? { |word| title.include?(word) }
+    if CLICKBAIT.none? { |word| title.include?(word) }
       true
-    else 
-     false
     end
  end
   
